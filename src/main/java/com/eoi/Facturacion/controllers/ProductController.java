@@ -14,11 +14,11 @@ public class ProductController {
     private ProductService productService;
     //Para acceder a los métodos
 
-    @GetMapping("/")
+    @GetMapping(value = {"/",""})
     //Model es el objeto que utiliza Spring para pasar al html los datos de la BD
     public String showProducts(Model model){
         //
-        model.addAttribute("product",productService.findAll());
+        model.addAttribute("products",productService.findAll());
         //Devuelve el HTML
         return "product-list";
     }
