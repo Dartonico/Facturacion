@@ -1,4 +1,5 @@
 package com.eoi.Facturacion.services;
+
 import com.eoi.Facturacion.entities.Customer;
 import com.eoi.Facturacion.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,9 @@ import java.util.Optional;
 
 @Service
 public class CustomerService {
-    @Autowired //Inyección de dependencias - accede al repositorio para guardas los objetos
+    @Autowired
     private CustomerRepository customerRepository;
 
-    //Implementación de los métodos principales que se usan al entrar en el CRUD
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }

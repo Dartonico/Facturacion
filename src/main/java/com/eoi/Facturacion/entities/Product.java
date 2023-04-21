@@ -7,20 +7,36 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-    @Column(name = "id")
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    /**
+     * Identificador único del producto.
+     */
+    @Id // Indica que esta propiedad es la clave primaria de la entidad
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Indica que la estrategia de generación de la clave es autoincremental
     private Long id;
-    @Column(name = "name")
+
+    /**
+     * Nombre del producto.
+     */
     private String name;
-    @Column(name = "description")
+
+    /**
+     * Descripción del producto.
+     */
     private String description;
-    @Column(name = "price")
-    private double price;
+
+    /**
+     * Precio del producto.
+     */
+    @Column(name = "price") // Indica que esta propiedad está mapeada a la columna "price" de la tabla correspondiente
+    private Double price;
+
+    // getters and setters
 }
+

@@ -10,18 +10,14 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    @Autowired //Inyección de dependencias - accede al repositorio para guardas los objetos
+    @Autowired
     private ProductRepository productRepository;
 
-    //Implementación de los métodos principales que se usan al entrar en el CRUD
     public List<Product> findAll() {
         return productRepository.findAll();
     }
     public Optional<Product> findById(Long id) {
         return productRepository.findById(id);
-    }
-    public Optional<Product> findByName(String name){
-        return productRepository.findByName(name);
     }
     public Product save(Product product) {
         return productRepository.save(product);
